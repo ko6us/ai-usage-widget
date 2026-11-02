@@ -20,6 +20,7 @@ flowchart LR
 | `collector.py` | Codex App Server・Claudeの使用量情報を取得し、表示用データだけを送信 |
 | `cloudflare/worker.mjs` | キーを検証してKVへ保存・読み取りするWorkerテンプレート |
 | `scriptable/AI Usage.js` | 余白を減らした中サイズウィジェット。残り％・リセット時刻・取得時刻を表示 |
+| `scriptable/AI Usage Circle.js` | 同じ機能の円形メーター版。元の横棒版と併用可能 |
 | `systemd/` | ラズパイの定期実行用user service / timer |
 | `scripts/prepare-local.py` | Git管理外のキーとデプロイファイルを生成 |
 | `tests/` | Workerの認証・入力検証と、Scriptableの通信エラー・再設定の検証 |
@@ -121,6 +122,9 @@ systemctl --user disable --now ai-usage-widget.timer
 4. `When Interacting`は`Run Script`、`Parameter`は空欄にします。
 
 既存のスクリプト本文を差し替えても、同じKeychain名を使うため保存済みのキーを引き継ぎます。
+円形メーター版を使う場合は、`AI Usage Circle.js`を別名のスクリプトとして追加し、一度実行します。
+ウィジェットを長押し → ウィジェットを編集 → Scriptで、`AI Usage`（横棒）と`AI Usage Circle`（円形）を切り替えられます。
+両方とも同じ読み取りキーとキャッシュを使い、残りの割合を表示します。Parameterは空欄です。
 401はキー不一致、403はアクセス拒否、通信エラーは接続の失敗として表示し、アプリ内でキーを再設定できます。
 キーやサーバーの生レスポンスはエラー画面に出しません。
 
