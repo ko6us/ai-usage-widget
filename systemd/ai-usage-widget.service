@@ -1,0 +1,12 @@
+[Unit]
+Description=Read AI subscription quota metadata and upload to Cloudflare
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/ai-usage-widget
+ExecStart=/usr/bin/python3 %h/ai-usage-widget/collector.py
+UMask=0077
+TimeoutStartSec=180
+NoNewPrivileges=true
+PrivateTmp=true

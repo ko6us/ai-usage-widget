@@ -1,0 +1,28 @@
+# Local credentials and account-specific deployment files
+.local/
+config.json
+upload-config.json
+private-config.json
+*.credentials.json
+auth.json
+.env
+.env.*
+!.env.example
+*read-key*.txt
+*.key
+*.pem
+*.token
+secrets/
+worker.deployed.mjs
+wrangler.local.jsonc
+
+# Runtime state, downloaded executables and build artifacts
+state/
+bin/
+node_modules/
+.wrangler/
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+Thumbs.db

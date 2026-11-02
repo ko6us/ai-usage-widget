@@ -1,0 +1,7 @@
+{
+  "endpoint": "https://YOUR-WORKER.YOUR-SUBDOMAIN.workers.dev",
+  "writeKey": "REPLACE_WITH_WRITE_KEY",
+  "codexCommand": "/home/YOUR_USER/ai-usage-widget/bin/codex-aarch64-unknown-linux-musl",
+  "claudeCredentials": "/home/YOUR_USER/ai-usage-widget/claude.credentials.json",
+  "claudeDedicatedAuth": false
+}

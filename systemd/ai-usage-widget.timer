@@ -1,0 +1,11 @@
+[Unit]
+Description=Update AI quota widget every five minutes
+
+[Timer]
+OnBootSec=90
+OnUnitInactiveSec=5min
+RandomizedDelaySec=20
+Persistent=true
+
+[Install]
+WantedBy=timers.target
